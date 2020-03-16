@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab-list">
+            <button class="tab-item" type="button" data-target = 'tab-1'>Button1</button>
+            <button class="tab-item" type="button" data-target = 'tab-2'>Button2</button>
+            <button class="tab-item" type="button" data-target = 'tab-3'>Button3</button>
+
+        </div>
+        <div class="tab-content">
+            <div id='tab-1' class="tab-content-item" hidden>tab content 1</div>
+            <div id='tab-2' class="tab-content-item" hidden>tab content 2</div>
+            <div id='tab-3' class="tab-content-item" hidden>tab content 3</div>
+        </div>
+    </div>    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+    </script>
+    <script>
+        $('.tab-list').delegate('.tab-item', 'click', function () {
+            location.hash = $(this).data('target')
+            $(window.location.hash).toggle()
+        })
+    </script>
+</body>
+</html>
